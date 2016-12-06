@@ -3,8 +3,8 @@
 var auth = new Buffer("YOUR_USERNAME" + ":" + "YOUR_PASSWORD").toString("base64");
 
 var options = {
-  appid: "ENTER_YOUR_APP_ID_FOR_ECHO_HERE",
-  host: "host_for_sonos_api",
+  appid: "amzn1.ask.skill.e6f43d3e-2df3-4617-95f1-da04941168eb",
+  host: "http://imacmini.dyndns-remote.com/",
   port: "5005",
   headers: {
       'Authorization': 'Basic ' + auth,
@@ -12,11 +12,10 @@ var options = {
   },
   useHttps: false, // Change to true if you setup node-sonos-http-api with HTTPS
   rejectUnauthorized: true, // Change to false if you self-signed your certificate
-  defaultRoom: '',				        // Allows you to specify a default room when one is not specified in the utterance 	
-  defaultMusicService: 'presets', // Supports presets, apple, spotify, deezer, or library
+  defaultRoom: 'TV Living Room',				        // Allows you to specify a default room when one is not specified in the utterance 	
+  defaultMusicService: 'spotify', // Supports presets, apple, spotify, deezer, or library
   advancedMode: false,             // Allows you to specify and change default rooms and music services. Requires additional AWS setup
   useSQS: false   // Use AWS SQS and node-sqs-proxy for secure communications
 };
 
 module.exports = options;
-
